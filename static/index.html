@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Issue Classifier</title>
+</head>
+<body>
+    <div class="container">
+        <h1>GitHub Issue Classifier</h1>
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required placeholder="Enter issue title">
+
+            <label for="body">Body:</label>
+            <textarea id="body" name="body" rows="2" required placeholder="Enter issue description"></textarea>
+
+            <div id="loading-spinner">
+                <span>Loading...</span>
+            </div>
+            <button id="predict-button">Predict</button>
+        </div>
+
+        <div class="labels-container">
+            <h3>Predicted Label:</h3>
+            <p id="predicted-label">-</p>
+
+            <h3>Correct Label:</h3>
+            <form id="correction-form">
+                <label class="radio-label">
+                    <input type="radio" name="label" value="enhancement" required> Enhancement
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="label" value="bug"> Bug
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="label" value="question"> Question
+                </label>
+            </form>
+            <button id="submit-button" disabled>Submit</button>
+            <div id="notification" class="notification"></div>
+        </div>
+    </div>
+    <script src="/static/scripts.js"></script>
+</body>
+</html>
